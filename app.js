@@ -11,14 +11,14 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
 function logEntryDataStructure() {
 
     this.raceCodex = 'TEST', //unique identifier for this race
-    this.phaseID = 'Final', //heat#1, quarters#1, semi#1, final
+    this.phaseID = 'Final', //heat1, heat2, heat3, heat3, heat5, heat6, quarter1, quarter2, quarter3, quarter4, semi1, semi2, final
     this.sport = 'snowboarding',
     this.event = 'snowboardCross',
     this.indexed = 'Yes', 
-    this.temp = '0', //ceclius
+    this.temp = '0', //celcius
     this.precip =  'None', //None, Rain, Light Snow, Heavy Snow
-    this.gender =  null,
-    this.bibRedStartLane=  0,
+    this.gender =  null, //Men, Women
+    this.bibRedStartLane=  0, //1,2,3,4,5,6
     this.bibGreenStartLane=  0,
     this.bibBlueStartLane=  0,
     this.bibBlackStartLane=  0,
