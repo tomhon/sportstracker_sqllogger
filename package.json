@@ -1,0 +1,23 @@
+{
+  "name": "sportstracker_sqllogger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomhon/sportstracker_sqllogger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomhon/sportstracker_sqllogger/issues"
+  },
+  "homepage": "https://github.com/tomhon/sportstracker_sqllogger#readme",
+  "dependencies": {
+    "restify": "^6.3.4",
+    "tedious": "^2.1.5"
+  }
+}
