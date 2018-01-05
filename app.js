@@ -96,12 +96,15 @@ function parseQueryToLogEntry(query) {
 server.get('/', function (req, res){
     console.log("Inbound Request:" , req.query);
     res.header('Access-Control-Allow-Origin', "*");
-
-    var logEntry = parseQueryToLogEntry(req.query);
-    logResponse (logEntry);
-    statusUpdateResponse = "Data Logging: Race " + req.query.raceCodex + ": Entry Logged";
-    console.log( statusUpdateResponse);
-    res.send(statusUpdateResponse);
+    if (req.query.raceCodex) {
+        var logEntry = parseQueryToLogEntry(req.query);
+        logResponse (logEntry);
+        statusUpdateResponse = "Data Logging: Race " + req.query.raceCodex + ": Entry Logged";
+        console.log( statusUpdateResponse);
+        res.send(statusUpdateResponse);
+    } else {
+        res.send('Invalid RaceID');
+    }
     // res.send(session.userData);
 
 });
