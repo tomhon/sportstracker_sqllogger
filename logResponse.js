@@ -52,7 +52,9 @@ module.exports = function logResponse (logEntry) {
 
 
 function createSQLRequest(userData) {
+    var date = new Date();
     sqlRequestString = "INSERT INTO dbo.TestTable (";
+            sqlRequestString += "timestamp,";
             sqlRequestString += "raceCodex,";
             sqlRequestString += "phaseID,"; //racePhase
             sqlRequestString += "sport,";
@@ -86,7 +88,7 @@ function createSQLRequest(userData) {
             sqlRequestString += "bibWhiteFinishPosition,";
             sqlRequestString += "bibYellowFinishPosition)";
         sqlRequestString += "VALUES ("
-            // sqlRequestString += "DEFAULT" + ",";
+            sqlRequestString += "'" + date.toISOString()  + "',";
             sqlRequestString += "'" + userData.raceCodex  + "',";
             sqlRequestString += "'" + userData.phaseID  + "',";
             sqlRequestString += "'" + userData.sport  + "',";
