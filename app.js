@@ -10,6 +10,8 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
 
 function logEntryDataStructure() {
 
+    this.username = '';
+    this.status = '';
     this.raceCodex = 'TEST', //unique identifier for this race
     this.phaseID = 'Final', //heat1, heat2, heat3, heat3, heat5, heat6, quarter1, quarter2, quarter3, quarter4, semi1, semi2, final
     this.sport = 'snowboarding',
@@ -54,6 +56,8 @@ function parseQueryToLogEntry(query) {
 
 
     tempLogEntry.raceCodex = query.raceCodex; //unique identifier for this race
+    tempLogEntry.username = query.username;
+    tempLogEntry.status = query.status;
     tempLogEntry.phaseID = query.phaseID; //heat#1, quarters#1, semi#1, final
     tempLogEntry.sport = query.sport,
     tempLogEntry.event = query.event;

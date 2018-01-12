@@ -55,6 +55,8 @@ function createSQLRequest(userData) {
     var date = new Date();
     sqlRequestString = "INSERT INTO dbo.TestTable (";
             sqlRequestString += "timestamp,";
+            sqlRequestString += "username,";
+            sqlRequestString += "status,";
             sqlRequestString += "raceCodex,";
             sqlRequestString += "phaseID,"; //racePhase
             sqlRequestString += "sport,";
@@ -89,6 +91,8 @@ function createSQLRequest(userData) {
             sqlRequestString += "bibYellowFinishPosition)";
         sqlRequestString += "VALUES ("
             sqlRequestString += "'" + date.toISOString()  + "',";
+            sqlRequestString += "'" + userData.username  + "',";
+            sqlRequestString += "'" + userData.status  + "',";
             sqlRequestString += "'" + userData.raceCodex  + "',";
             sqlRequestString += "'" + userData.phaseID  + "',";
             sqlRequestString += "'" + userData.sport  + "',";
